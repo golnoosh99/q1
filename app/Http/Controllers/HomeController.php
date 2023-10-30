@@ -39,9 +39,15 @@ class HomeController extends Controller
         $product =  Product::findOrFail($id);
         $product->picture = $request->input('picture');
         $product->name = $request->input('name');
-        $student->category = $request->input('category');
-        $student->Description = $request->input('Description');
-        $student->update();
+        $product->category = $request->input('category');
+        $product->description = $request->input('description');
+        $product->update();
+        return redirect ('/home');
+    }
+    public function destroy($id)
+    {
+        $product = Product::findOrFail($id);
+        $product->delete();
         return redirect ('/home');
     }
 

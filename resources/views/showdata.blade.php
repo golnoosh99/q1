@@ -32,6 +32,12 @@
                           <td>{{ $product->category }}</td>
                           <td>{{ $product->description }}</td> 
                           <td><a href="{{route('home')}}/{{ $product->id }}"><button class="btn btn-warning">Update</button></a></td>
+                          <td><form action="home/{{ $product->id }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger">Delete</button>
+                          </form>
+                          </td>
                         </tr>
                         @endforeach
                       </tbody>

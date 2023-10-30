@@ -19,6 +19,8 @@ Route::get('/home/{id}', 'HomeController@prcdata')->name('prcdata');
 
 Route::put('/home/{id}', 'HomeController@update')->name('update');
 
+Route::delete('/home/{id}', 'HomeController@destroy')->name('destroy');
+
 Route::get('/new', 'HomeController@new')->name('new');
 
 Route::post('/store', 'HomeController@store');
